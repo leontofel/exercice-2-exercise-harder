@@ -29,7 +29,7 @@ export class DonationRepository {
   async findAllSorted(orderBy?: { field?: string; direction?: string }) {
     const { field = 'createdAt', direction = 'desc' } = orderBy || {};
     return this.prisma.donation.findMany({
-      orderBy: { [field]: [direction] },
+      orderBy: { [field]: direction },
     });
   }
 

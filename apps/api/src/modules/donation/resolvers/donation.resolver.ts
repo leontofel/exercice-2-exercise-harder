@@ -41,7 +41,9 @@ export class DonationResolver {
     @Args('ordersBy', { type: () => OrderDonationDto })
     orderBy?: OrderDonationDto,
   ) {
-    return (await this.serviceFactory.create(FindAllSortedUsecase)).handle();
+    return (await this.serviceFactory.create(FindAllSortedUsecase)).handle(
+      orderBy,
+    );
   }
 
   @Query(() => DonationDto, {
@@ -60,7 +62,9 @@ export class DonationResolver {
     return (await this.serviceFactory.create(FindTotalUsecase)).handle();
   }
 
-  @Subscription(() => Number)
+  @Subscription(() => Number, {
+    name: 'totalUpdated',
+  })
   async totalUpdated() {
     return pubSub.asyncIterator('totalUpdated');
   }
