@@ -8,6 +8,9 @@ import { DonationModule } from './modules/donation/donation.module';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
+      subscriptions: {
+        'graphql-ws': true,
+      },
     }),
     DonationModule,
   ],
