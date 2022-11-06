@@ -15,9 +15,8 @@ import { FindByIdUsecase } from './use-cases/find-by-id.usecase';
 import { OrderDonationDto } from '../dto/order-donation.dto';
 import { FindAllSortedUsecase } from './use-cases/find-all-sorted.usecase';
 import { FindTotalUsecase } from './use-cases/find-total.usecase';
-import { PubSub } from 'graphql-subscriptions';
-
-const pubSub = new PubSub();
+import pubSub from '../repository/donation.repository';
+import { SubscriptionTotalDto } from '../dto/subscription-total.dto';
 
 @Resolver()
 export class DonationResolver {
@@ -62,7 +61,7 @@ export class DonationResolver {
     return (await this.serviceFactory.create(FindTotalUsecase)).handle();
   }
 
-  @Subscription(() => Number, {
+  @Subscription(() => SubscriptionTotalDto, {
     name: 'totalUpdated',
   })
   async totalUpdated() {

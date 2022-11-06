@@ -16,7 +16,6 @@ export class DonationRepository {
       },
     });
     const total = await this.findTotal();
-
     await pubSub.publish('totalUpdated', { totalUpdated: { total } });
 
     return created;
@@ -48,3 +47,5 @@ export class DonationRepository {
     return response._sum.count;
   }
 }
+
+export default pubSub;
