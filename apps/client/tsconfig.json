@@ -14,7 +14,28 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "src",
+    "paths": {
+      "src/*": [
+        "./src/*"
+      ],
+      "organisms/*": [
+        "../../organisms/*"
+      ],
+      "atoms/*": [
+        "./src/atoms/*"
+      ],
+      "molecules/*": [
+        "./src/molecules/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
+      ],
+      "graphql/*": [
+        "./src/graphql/*"
+      ],
+    }
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

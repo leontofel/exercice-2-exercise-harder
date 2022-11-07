@@ -41,7 +41,7 @@ export const Leaderboard = () => {
                 </RadioGroup>
 
                 {data.findAllSorted !== undefined && data.findAllSorted.map((donation) => (
-                    <LeaderboardItem donation={donation} />
+                    <LeaderboardItem key={donation.id} donation={donation} />
                 ))}
             </VStack>
         </Box>

@@ -1,8 +1,8 @@
-import {CountSelection} from "../molecules/CountSelection";
-import {DonationDetails} from "../molecules/DonationDetails";
-import React, {useState} from "react";
-import {Box} from "@chakra-ui/react";
-import {useMutation} from "urql";
+import { CountSelection } from "../molecules/CountSelection";
+import { DonationDetails } from "../molecules/DonationDetails";
+import React, { useState } from "react";
+import { Box } from "@chakra-ui/react";
+import { useMutation } from "urql";
 import CreateDonation from "../graphql/mutations";
 import StateChangeWarning from "../atoms/StateChangeWarning";
 
@@ -30,7 +30,7 @@ export default function DonationSection() {
     };
 
     const submitDonation = async (values: any) => {
-        await createDonation({ dto: values});
+        await createDonation({ dto: values });
         setShowConfirmation(true);
     }
 
