@@ -6,7 +6,7 @@ interface Props {
     to: number;
 }
 
-export const Counter = ({ from, to }: Props) => {
+export const CounterAtom = ({ from, to }: Props) => {
     const nodeRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {

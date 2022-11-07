@@ -1,15 +1,15 @@
 import {
     Button,
-    Heading,
     NumberInput,
     NumberInputField,
     SimpleGrid,
     useRadioGroup,
-    VStack,
-    Text
+    VStack
 } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import RadioCard from './RadioCard';
+import Title from "../atoms/Title";
+import TextAtom from "../atoms/TextAtom";
 
 interface Props {
     initialCount: number;
@@ -39,16 +39,10 @@ export const CountSelection = ({ initialCount, next }: Props) => {
         next({ count: pounds });
     };
 
-    // @ts-ignore
-    // @ts-ignore
     return (
         <VStack spacing={4} align="stretch">
-            <Heading as="h3" size="md">
-                JOIN #TEAMSEAS
-            </Heading>
-            <Text fontSize="md" fontWeight="bold">
-                $1 removes a pound of trash
-            </Text>
+            <Title as="h3" size="md" text={"JOIN #TEAMSEAS"} />
+            <TextAtom fontSize="md" fontWeight="bold" text="$1 removes a pound of trash" />
             <SimpleGrid mt={5} columns={2} spacing={2} {...group}>
                 {options.map((value) => {
                     const radio = getRadioProps({ value, enterKeyHint: '' });
@@ -74,7 +68,6 @@ export const CountSelection = ({ initialCount, next }: Props) => {
             <hr />
 
             <Button
-
                 colorScheme="orange"
                 size="lg"
                 borderRadius="full"

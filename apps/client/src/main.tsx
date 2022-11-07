@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import {ChakraProvider, ColorModeScript, extendTheme} from "@chakra-ui/react";
+import { ChakraProvider, ColorModeScript, extendTheme } from "@chakra-ui/react";
 import '@fontsource/montserrat/700.css';
 import '@fontsource/montserrat/400.css';
 import '@fontsource/montserrat/300.css';
-import {createClient, defaultExchanges, Provider, subscriptionExchange} from 'urql';
+import { createClient, defaultExchanges, Provider, subscriptionExchange } from 'urql';
 import { createClient as createWSClient } from 'graphql-ws';
 
 const theme = extendTheme({

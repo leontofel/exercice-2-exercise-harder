@@ -3,28 +3,14 @@ import { Radio, RadioGroup } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useQuery } from 'urql';
 import { IDonation } from '../types';
-import { LeaderboardItem } from './LeaderboardItem';
-
-const DonationsQuery = `
-  query Query($ordersBy: OrderDonationDto!) {
-    findAllSorted(ordersBy: $ordersBy) {
-      count,
-      id,
-      displayName,
-      createdAt,
-      message,
-      team
-    }
-  }
-`;
+import { LeaderboardItem } from '../molecules/LeaderboardItem';
+import { DonationsQuery } from '../graphql/queries';
 
 type DonationsQueryRes = {
     findAllSorted: IDonation[];
 };
 
-interface Props {}
-
-export const Leaderboard = (props: Props) => {
+export const Leaderboard = () => {
     const [field, setOrderByField] = useState('createdAt');
 
     const [{ data, fetching, error }] = useQuery<DonationsQueryRes>({

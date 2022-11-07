@@ -4,6 +4,7 @@ import { Box } from '@chakra-ui/react';
 import React from 'react';
 import { IDonation } from '../types';
 import formatDate from '../utils/formatDate';
+import TextAtom from "../atoms/TextAtom";
 
 interface Props {
     donation: IDonation;
@@ -31,8 +32,8 @@ export const LeaderboardItem = ({ donation }: Props) => {
                         >
                             {donation.team}
                         </Text>
-                        <Text fontWeight="bold">{donation.displayName}</Text>
-                        <Text fontSize="sm">{donation.message}</Text>
+                        <TextAtom fontWeight="bold" text={donation.displayName} />
+                        <TextAtom fontSize="sm" text={donation.message} />
                     </Flex>
 
                     <Flex
@@ -52,7 +53,7 @@ export const LeaderboardItem = ({ donation }: Props) => {
                                 {donation.count.toLocaleString()} pounds
                             </Badge>
                         </div>
-                        <Text fontSize="xs">{formatDate(donation.createdAt)}</Text>
+                        <TextAtom fontSize="xs" text={formatDate(donation.createdAt)} />
                     </Flex>
                 </Flex>
             </Box>

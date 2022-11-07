@@ -12,7 +12,7 @@ type TextareaFieldProps = FieldHookConfig<string> & {
     placeholder?: string;
 };
 
-export const TextareaField = ({
+export const TextAreaField = ({
                                   label,
                                   placeholder,
                                   ...props

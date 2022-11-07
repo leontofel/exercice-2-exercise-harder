@@ -1,9 +1,10 @@
-import { VStack, Button, Heading } from '@chakra-ui/react';
+import { VStack, Button } from '@chakra-ui/react';
 import { Form, Formik } from 'formik';
 import React from 'react';
-import { InputField } from '../form/InputField';
-import { TextareaField } from '../form/TextAreaField';
+import { InputField } from './InputField';
+import { TextAreaField } from './TextAreaField';
 import * as yup from 'yup';
+import Title from "../atoms/Title";
 
 const detailsSchema = yup.object().shape({
     displayName: yup.string().required('Please enter a display name'),
@@ -41,9 +42,7 @@ export const DonationDetails = ({ next, previous }: Props) => {
             {(formikProps) => (
                 <Form>
                     <VStack spacing={4} align="stretch">
-                        <Heading as="h3" size="md">
-                            Details
-                        </Heading>
+                        <Title as="h3" size="md" text="Details" />
                         <InputField
                             label="Display Name"
                             name="displayName"
@@ -64,7 +63,7 @@ export const DonationDetails = ({ next, previous }: Props) => {
 
                         <InputField label="Team" name="team" placeholder="Team name" />
 
-                        <TextareaField
+                        <TextAreaField
                             label="Message"
                             name="message"
                             placeholder="My #TeamSeas message is..."
