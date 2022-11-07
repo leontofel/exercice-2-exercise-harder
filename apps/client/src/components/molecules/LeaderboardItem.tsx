@@ -2,8 +2,8 @@ import { Avatar } from '@chakra-ui/avatar';
 import { Badge, Flex, Text } from '@chakra-ui/layout';
 import { Box } from '@chakra-ui/react';
 import React from 'react';
-import { IDonation } from '../types';
-import formatDate from '../utils/formatDate';
+import { IDonation } from '../../types';
+import formatDate from '../../utils/formatDate';
 import TextAtom from "../atoms/TextAtom";
 
 interface Props {

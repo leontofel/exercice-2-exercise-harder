@@ -4,8 +4,8 @@ import MainTitle from "../molecules/MainTitle";
 import {CounterAtom} from "../atoms/CounterAtom";
 import {Heading, Spinner, Text} from "@chakra-ui/react";
 import {useQuery, useSubscription} from "urql";
-import {TotalDonationsQuery} from "../graphql/queries";
-import TotalUpdatedQuery from "../graphql/subscriptions";
+import {TotalDonationsQuery} from "../../graphql/queries";
+import TotalUpdatedQuery from "../../graphql/subscriptions";
 
 export default function Header() {
     const handleSubscription = (previous: any, newTotal: any) => {

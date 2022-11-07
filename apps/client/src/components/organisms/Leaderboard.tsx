@@ -2,9 +2,9 @@ import { Box, Heading, Stack, VStack, Text } from '@chakra-ui/layout';
 import { Radio, RadioGroup } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { useQuery } from 'urql';
-import { IDonation } from '../types';
+import { IDonation } from '../../types';
 import { LeaderboardItem } from '../molecules/LeaderboardItem';
-import { DonationsQuery } from '../graphql/queries';
+import { DonationsQuery } from '../../graphql/queries';
 
 type DonationsQueryRes = {
     findAllSorted: IDonation[];

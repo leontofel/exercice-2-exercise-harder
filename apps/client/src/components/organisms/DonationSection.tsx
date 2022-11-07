@@ -3,7 +3,7 @@ import { DonationDetails } from "../molecules/DonationDetails";
 import React, { useState } from "react";
 import { Box } from "@chakra-ui/react";
 import { useMutation } from "urql";
-import CreateDonation from "../graphql/mutations";
+import CreateDonation from "../../graphql/mutations";
 import StateChangeWarning from "../atoms/StateChangeWarning";
 
 export default function DonationSection() {
