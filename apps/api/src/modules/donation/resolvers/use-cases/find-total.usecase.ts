@@ -1,15 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { UseCase } from '../../../../types';
 import { DonationRepository } from '../../repository/donation.repository';
-import { DonationDto } from '../../dto/donation.dto';
 
 @Injectable()
-export class FindAllUsecase
-  implements UseCase<Promise<DonationDto[]>, [DonationDto]>
+export class FindTotalUsecase
+    implements UseCase<Promise<number>, [number]>
 {
   constructor(private readonly donationRepository: DonationRepository) {}
 
   async handle() {
-    return this.donationRepository.findAll();
+    return this.donationRepository.findTotal();
   }
 }
